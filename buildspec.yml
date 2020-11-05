@@ -1,0 +1,16 @@
+version: 0.2
+
+env:
+  parameter-store:
+    ACCESS_KEY_ID: "/my-app/accessKeyId"
+    SECRET_ACCESS_KEY: "/my-app/secretAccessKey"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+  build:
+    commands:
+      - echo $ACCESS_KEY_ID
+      - echo $SECRET_ACCESS_KEY
+      - ./deploy.sh --accessKeyId $ACCESS_KEY_ID --secretAccessKey $SECRET_ACCESS_KEY --stage $STAGE --region $AWS_REGION
