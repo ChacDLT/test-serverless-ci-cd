@@ -6,9 +6,6 @@ env:
     SECRET_ACCESS_KEY: "/my-app/secretAccessKey"
 
 phases:
-    install:
-      runtime-versions:
-        nodejs: 12
   build:
     commands:
       - echo $ACCESS_KEY_ID
